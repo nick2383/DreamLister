@@ -39,7 +39,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="nlB-EM-Zml" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="nlB-EM-Zml" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nlB-EM-Zml" id="cb3-7I-Opz">
@@ -100,12 +100,6 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <outlet property="details" destination="I5l-Oa-MpC" id="YQJ-UC-uoq"/>
-                                                        <outlet property="price" destination="APe-jD-jca" id="e4B-hj-7aG"/>
-                                                        <outlet property="thumb" destination="wGQ-4p-ULa" id="g46-Mq-8eF"/>
-                                                        <outlet property="title" destination="TBf-VY-ZvN" id="h81-Hp-6Ja"/>
-                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -116,6 +110,12 @@
                                                 <constraint firstItem="IyZ-PN-Ij3" firstAttribute="leading" secondItem="cb3-7I-Opz" secondAttribute="leadingMargin" id="scW-J4-JnU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="details" destination="I5l-Oa-MpC" id="Za4-ju-JeH"/>
+                                            <outlet property="price" destination="APe-jD-jca" id="mqF-MN-ono"/>
+                                            <outlet property="thumb" destination="wGQ-4p-ULa" id="KCc-Sh-Rf1"/>
+                                            <outlet property="title" destination="TBf-VY-ZvN" id="zz7-BA-rOA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -138,7 +138,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="segment" destination="1r9-yi-xX0" id="OHS-e8-52F"/>
-                        <outlet property="tableView" destination="tby-WK-KaG" id="kjT-jf-PmX"/>
+                        <outlet property="tableView" destination="tby-WK-KaG" id="tHK-Oe-pZW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
