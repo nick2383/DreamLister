@@ -33,6 +33,9 @@
                                     <segment title="Title"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="5jV-Jq-jQM"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tby-WK-KaG">
                                 <rect key="frame" x="16" y="132" width="343" height="535"/>
@@ -161,7 +164,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="Hny-Vm-8IL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="Hny-Vm-8IL">
                                 <rect key="frame" x="16" y="72" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="lpL-kB-WA0"/>
@@ -174,6 +177,9 @@
                                     <constraint firstAttribute="width" constant="100" id="3U5-og-P8I"/>
                                     <constraint firstAttribute="height" constant="100" id="3cH-i0-ErE"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="9zl-K9-9ek" eventType="touchUpInside" id="BnC-fk-lvO"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6PS-Tg-4Iq" customClass="CustomTextField" customModule="DreamLister" customModuleProvider="target">
                                 <rect key="frame" x="124" y="82" width="235" height="40"/>
@@ -264,12 +270,16 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="MTS-aZ-pa4">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="m9z-ue-4Q4">
                             <color key="tintColor" red="1" green="0.074722287540000001" blue="0.066713233849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="9zl-K9-9ek" id="jAp-GD-QmQ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailsField" destination="6qA-bI-ORV" id="nhS-CL-1JR"/>
                         <outlet property="priceField" destination="T3W-oL-Zl1" id="lJF-3I-gsk"/>
                         <outlet property="storePicker" destination="HlY-5O-7Wj" id="Voq-tA-dgc"/>
+                        <outlet property="thumbImg" destination="Hny-Vm-8IL" id="PKt-47-SU5"/>
                         <outlet property="titleField" destination="6PS-Tg-4Iq" id="bQy-gk-SW5"/>
                     </connections>
                 </viewController>
@@ -282,7 +292,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wr2-kl-jA9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MVi-bA-uZ2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MVi-bA-uZ2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
