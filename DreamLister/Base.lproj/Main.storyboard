@@ -221,6 +221,9 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" red="0.88808316659999997" green="0.88808316659999997" blue="0.88808316659999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="savedPressed:" destination="9zl-K9-9ek" eventType="touchUpInside" id="spZ-bO-CXG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAb-ck-ptS">
                                 <rect key="frame" x="140.5" y="354" width="94" height="21"/>
@@ -263,6 +266,12 @@
                             <color key="tintColor" red="1" green="0.074722287540000001" blue="0.066713233849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsField" destination="6qA-bI-ORV" id="nhS-CL-1JR"/>
+                        <outlet property="priceField" destination="T3W-oL-Zl1" id="lJF-3I-gsk"/>
+                        <outlet property="storePicker" destination="HlY-5O-7Wj" id="Voq-tA-dgc"/>
+                        <outlet property="titleField" destination="6PS-Tg-4Iq" id="bQy-gk-SW5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6l6-Sd-9hL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
