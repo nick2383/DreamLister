@@ -150,7 +150,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let item3 = Item(context: context)
         item3.title = "Tesla Model S"
         item3.price = 110000
-        item3.details = "I can't wait until the September event, I hope they realease new MPBs"
+        item3.details = "Oh man this is a beautiful car. And one day, I will own one."
+        
+        
+        ad.saveContext()
     }
     
     
