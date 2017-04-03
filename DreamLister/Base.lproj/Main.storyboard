@@ -31,6 +31,7 @@
                                     <segment title="Newest"/>
                                     <segment title="Price"/>
                                     <segment title="Title"/>
+                                    <segment title="Type"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -231,11 +232,11 @@
                                     <action selector="savedPressed:" destination="9zl-K9-9ek" eventType="touchUpInside" id="spZ-bO-CXG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAb-ck-ptS">
-                                <rect key="frame" x="160" y="272" width="94" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store                 Select Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAb-ck-ptS">
+                                <rect key="frame" x="75.666666666666686" y="272" width="263" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="IWs-3m-ZwN"/>
-                                    <constraint firstAttribute="width" constant="94" id="iGz-Ho-kOb"/>
+                                    <constraint firstAttribute="width" constant="263" id="iGz-Ho-kOb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -285,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6l6-Sd-9hL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="-546.47676161919048"/>
+            <point key="canvasLocation" x="1931.8840579710147" y="-547.01086956521749"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m0s-Dh-fAg">

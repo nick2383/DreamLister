@@ -18,6 +18,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @IBOutlet weak var thumbImg: UIImageView!
 
     var stores = [Store]()
+    var types = [ItemType]()
     var itemToEdit: Item?
     var imagePicker: UIImagePickerController!
     
@@ -44,12 +45,14 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
-//        let store = Store(context: context)
-//        store.name = "Best Buy"
+        
+//        // create Store entities and edit name
+//        let store1 = Store(context: context)
+//        store1.name = "Best Buy"
 //        let store2 = Store(context: context)
-//        store2.name = "Tesla Dealership"
+//        store2.name = "Tesla Dealer"
 //        let store3 = Store(context: context)
-//        store3.name = "Frys Electronics"
+//        store3.name = "Frys"
 //        let store4 = Store(context: context)
 //        store4.name = "Target"
 //        let store5 = Store(context: context)
@@ -57,8 +60,20 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
 //        let store6 = Store(context: context)
 //        store6.name = "K-Mart"
 //        
+//        // create ItemType entities and edit name
+//        let type1 = ItemType(context: context)
+//        type1.type = "Electronics"
+//        let type2 = ItemType(context: context)
+//        type2.type = "Vehicle"
+//        let type3 = ItemType(context: context)
+//        type3.type = "Clothing"
+//        
+//        // save data to database
 //        ad.saveContext()
+        
+        // get store and itemtype data
         getStores()
+        getItemTypes()
         
         if itemToEdit != nil {
             
@@ -69,19 +84,39 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        let store = stores[row]
-        return store.name
+        if component == 1 {
+            
+            let itemType = types[row]
+            return itemType.type
+            
+        } else {
+           
+            let store = stores[row]
+            return store.name
+            
+        }
+        
+        
         
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return stores.count
+        if component == 1 {
+        
+            return types.count
+            
+        } else {
+            
+            return stores.count
+            
+        }
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
-        return 1
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -95,6 +130,22 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         do {
             
             self.stores = try context.fetch(fetchRequest)
+            self.storePicker.reloadAllComponents()
+            
+        } catch {
+            
+            // handle errore
+            
+        }
+    }
+    
+    func getItemTypes(){
+        
+        let fetchRequest: NSFetchRequest<ItemType> = ItemType.fetchRequest()
+        
+        do {
+            
+            self.types = try context.fetch(fetchRequest)
             self.storePicker.reloadAllComponents()
             
         } catch {
@@ -140,6 +191,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
         item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
+        item.toItemType = types[storePicker.selectedRow(inComponent: 1)]
         
         ad.saveContext()
         
@@ -172,6 +224,23 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     index += 1
                     
                 } while (index < stores.count)
+            }
+            
+            if let type = item.toItemType {
+                
+                var index = 0
+                repeat {
+                    
+                    let s = types[index]
+                    if s.type == type.type {
+                        
+                        storePicker.selectRow(index, inComponent: 1, animated: false)
+                        break
+                    }
+                    
+                    index += 1
+                    
+                } while (index < types.count)
             }
         }
         

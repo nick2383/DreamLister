@@ -98,6 +98,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         let priceSort = NSSortDescriptor(key: "price", ascending: true)
         let tittleSort = NSSortDescriptor(key: "title", ascending: true)
+        let typeSort = NSSortDescriptor(key: "toItemType.type", ascending: true)
         
         if segment.selectedSegmentIndex == 0{
             
@@ -111,7 +112,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             
             fetchRequest.sortDescriptors = [tittleSort]
             
+        } else if segment.selectedSegmentIndex == 3 {
+            
+            fetchRequest.sortDescriptors = [typeSort]
+            
         }
+
         
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
